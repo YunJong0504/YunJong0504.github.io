@@ -1,0 +1,333 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f4">
+    <meta name="description" content="YunJong - 아이디어를 직접 구현하는 프로그래머">
+    <title>YunJong | Resume</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #17231d;
+            --muted: #64736b;
+            --line: #dfe6df;
+            --green: #2f7455;
+            --wash: #edf4ee;
+            --paper: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #f6f7f4;
+            color: var(--ink);
+            font-family: Inter,"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            width: min(1040px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        header {
+            padding: 28px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: -.04em;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+            nav a {
+                text-decoration: none;
+            }
+
+                nav a:hover {
+                    color: var(--green);
+                }
+
+        .hero {
+            padding: 76px 0 70px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 750;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0 18px;
+            font-size: clamp(42px,8vw,76px);
+            line-height: 1.06;
+            letter-spacing: -.07em;
+        }
+
+        .intro {
+            max-width: 600px;
+            margin: 0;
+            color: #526158;
+            font-size: clamp(17px,2.4vw,21px);
+            word-break: keep-all;
+        }
+
+        .hero-mark {
+            display: grid;
+            place-items: center;
+            width: 170px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--wash);
+            color: var(--green);
+            font-size: 62px;
+            font-weight: 800;
+            letter-spacing: -.08em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding-bottom: 70px;
+        }
+
+        section.card {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 26px;
+        }
+
+        h2 {
+            margin: 0 0 22px;
+            font-size: 19px;
+            letter-spacing: -.03em;
+        }
+
+        .entry + .entry {
+            border-top: 1px solid var(--line);
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .entry h3 {
+            margin: 0 0 5px;
+            font-size: 16px;
+        }
+
+        .entry p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .date {
+            color: var(--green) !important;
+            font-size: 12px !important;
+            font-weight: 700;
+            margin-bottom: 7px !important;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .chip {
+            padding: 7px 12px;
+            border-radius: 99px;
+            background: var(--wash);
+            color: #2f654c;
+            font-size: 13px;
+            font-weight: 650;
+        }
+
+        .skill {
+            margin: 17px 0 0;
+        }
+
+        .skill-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .track {
+            height: 7px;
+            border-radius: 9px;
+            background: #e8eee8;
+            overflow: hidden;
+        }
+
+        .fill {
+            width: 70%;
+            height: 100%;
+            background: var(--green);
+            border-radius: 9px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+            .contact-list strong {
+                color: var(--ink);
+                font-weight: 650;
+            }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 24px 0 34px;
+            color: var(--muted);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media(max-width:680px) {
+            .wrap {
+                width: min(100% - 28px,560px)
+            }
+
+            header {
+                padding: 20px 0
+            }
+
+            nav {
+                gap: 13px;
+                font-size: 12px
+            }
+
+            .hero {
+                padding: 50px 0;
+                grid-template-columns: 1fr
+            }
+
+            .hero-mark {
+                width: 90px;
+                font-size: 34px;
+                grid-row: 1
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                padding-bottom: 45px
+            }
+
+            section.card {
+                padding: 22px
+            }
+        }
+
+        @media print {
+            body {
+                background: white
+            }
+
+            header nav {
+                display: none
+            }
+
+            .wrap {
+                width: 100%
+            }
+
+            .hero {
+                padding: 24px 0
+            }
+
+            section.card {
+                break-inside: avoid;
+                box-shadow: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a class="brand" href="#top">YJ.</a>
+            <nav aria-label="주요 메뉴"><a href="#about">소개</a><a href="#experience">학력</a><a href="#skills">기술</a><a href="#projects">프로젝트</a></nav>
+        </header>
+        <main id="top">
+            <section class="hero" id="about">
+                <div>
+                    <div class="eyebrow">Developer · Resume</div>
+                    <h1>안녕하세요,<br>YunJong입니다.</h1>
+                    <p class="intro">새로운 아이디어를 떠올리고 직접 구현해보는 것을 좋아하는 프로그래머입니다.</p>
+                </div>
+                <div class="hero-mark" aria-hidden="true">YJ</div>
+            </section>
+            <div class="grid">
+                <section class="card" id="experience">
+                    <h2>교육</h2>
+                    <div class="entry">
+                        <p class="date">2026.03 — 2028.02 (예정)</p>
+                        <h3>한국방송통신대학교</h3>
+                        <p>컴퓨터과학과 · 재학 중, 3학년</p>
+                    </div>
+                    <div class="entry">
+                        <p class="date">2020.03 — 2025.02</p>
+                        <h3>상명대학교</h3>
+                        <p>행정학과 · 졸업</p>
+                    </div>
+                </section>
+                <section class="card" id="skills">
+                    <h2>기술과 역량</h2>
+                    <div class="chips"><span class="chip">C</span><span class="chip">C++</span><span class="chip">자료구조</span><span class="chip">알고리즘</span></div>
+                    <div class="skill"><div class="skill-top"><strong>C / C++</strong><span>70%</span></div><div class="track"><div class="fill"></div></div></div>
+                </section>
+                <section class="card" id="projects">
+                    <h2>프로젝트</h2>
+                    <div class="entry">
+                        <p class="date">C / C++</p>
+                        <h3>C Practice</h3>
+                        <p>C와 C++를 활용한 연습 프로젝트</p>
+                    </div>
+                </section>
+                <section class="card" id="contact">
+                    <h2>연락처</h2>
+                    <div class="contact-list"><div>전화 <strong><a href="tel:+821023494855">010-2349-4855</a></strong></div><div>위치 <strong>경기도 파주시</strong></div><div>이메일 <strong>이력서 원본 정보 확인 후 추가</strong></div></div>
+                </section>
+            </div>
+        </main>
+        <footer>© <span id="year"></span> YunJong · Built with HTML &amp; CSS</footer>
+    </div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
